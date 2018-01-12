@@ -10,9 +10,10 @@
 from models.config.base import Config
 from models.config.mode import Production, Development, Testing
 
-APP_NAME = 'imaginary'
+APP_NAME = 'breast_cancer'
 
 __all__ = [
+    'APP_NAME',
     'Config',
     'Development',
     'Production',

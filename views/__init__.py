@@ -7,8 +7,7 @@
   
   Copyright © 2018. Victor. All rights reserved.
 """
-from flask import Flask, render_template
-
+from flask import Flask
 
 app = Flask('__main__')
 app.config.from_object('models.config.Development')
@@ -16,12 +15,6 @@ app.config.from_object('models.config.Development')
 # noinspection PyUnresolvedReferences
 from helpers import back
 
-
 # External routes/views
-# from views.pages import *
-
-
-@app.route('/')
-@back.anchor
-def index():
-    return render_template('index.html')
+from views.pages import *
+from views.error import *
