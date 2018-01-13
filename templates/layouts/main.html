@@ -1,96 +1,60 @@
-<!DOCTYPE html>
-<!--
-  @author Victor I. Afolabi
-  A.I. engineer/researcher & Software engineer
-  javafolabi@gmail.com
- 
- Created on 12 January, 2018 @ 3:45 PM.
- 
- Copyright © 2018. Victor. All rights reserved.
--->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>{% block title %}{% endblock %} &bull; Breast Cancer Classification</title>
-  <!-- for-meta-tags-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <meta name="keywords" content="Breast cancer classification. Rufus Giwa Polytechnic 2017/2018 final year project."/>
-  <!-- //for-meta-tags-->
+{% with title=self.title() %}
+  {% include '_includes/_header.html' %}
+{% endwith %}
 
-  <script type="application/x-javascript"> addEventListener("load", function () {
-    setTimeout(hideURLbar, 0);
-  }, false);
-
-  function hideURLbar() {
-    window.scrollTo(0, 1);
-  } </script>
-
-  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
-
-  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css" media="screen"
-        Department=""/>
-  <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet" type="text/css" media="all"/>
-  <link href="{{ url_for('static', filename='css/ziehharmonika.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url_for('static', filename='css/JiSlider.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
-  <!-- font-awesome icons -->
-  <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
-  <!-- //font-awesome icons -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-        rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
-</head>
-
-<body>
-<div class="main" id="home">
-  <!-- Top header -->
-  <div class="header_agileinfo">
-    <!-- Addresses -->
-    <div class="w3_agileits_header_text">
-      <ul class="top_agile_w3l_info_icons">
+{% block slider %}
+  <!-- banner -->
+  <div class="banner-slider">
+    <div id="JiSlider" class="jislider">
+      <ul>
         <li>
-          <i class="fa fa-home" aria-hidden="true"></i>Rufus Giwa, Owo, Ondo state.
-        </li>
-        <li class="second">
-          <i class="fa fa-phone" aria-hidden="true"></i>(+234) 814 120 5245
+          <div class="w3layouts-banner-top">
+
+            <div class="container">
+              <div class="agileits-banner-info">
+                <span>Cancer Research</span>
+                <h3>Quality Care </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin
+                  dignissim.</p>
+
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          <a href="mailto:research@cancer.com">research@cancer.com</a>
-        </li>
-      </ul>
+          <div class="w3layouts-banner-top w3layouts-banner-top1">
+            <div class="container">
+              <div class="agileits-banner-info">
+                <span>Real</span>
+                <h3>Free Consultation </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin
+                  dignissim.</p>
 
-    </div>
-    <!-- Social icons -->
-    <div class="agileinfo_social_icons">
-      <ul class="agileits_social_list">
-        <li>
-          <a href="#" class="w3_agile_facebook">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
+              </div>
+            </div>
+          </div>
         </li>
         <li>
-          <a href="#" class="agile_twitter">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
+          <div class="w3layouts-banner-top w3layouts-banner-top2">
+            <div class="container">
+              <div class="agileits-banner-info">
+                <span>Amazing</span>
+                <h3>Quality Care </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin
+                  dignissim.</p>
+
+              </div>
+
+            </div>
+          </div>
         </li>
-        <li>
-          <a href="#" class="w3_agile_rss">
-            <i class="fa fa-rss" aria-hidden="true"></i>
-          </a>
-        </li>
+
       </ul>
     </div>
-    <div class="clearfix"></div>
   </div>
-  <!-- Nav bar -->
-  <div class="header-bottom">
-    {% include '_includes/_nav.html' %}
-  </div>
+  <!-- //banner -->
 
-</div>
+{% endblock %}
 
 {% block body %}
 {% endblock %}

@@ -1,0 +1,24 @@
+{% with title=self.title() %}
+  {% include '_includes/_header.html' %}
+{% endwith %}
+
+<!-- banner -->
+<div class="banner1 jarallax">
+  <div class="container">
+  </div>
+</div>
+
+<div class="services-breadcrumb">
+  <div class="container">
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a><i>|</i></li>
+      <li>{{ self.title() }}</li>
+    </ul>
+  </div>
+</div>
+<!-- /banner -->
+
+{% block body %}
+{% endblock %}
+
+{% include '_includes/_footer.html' %}
