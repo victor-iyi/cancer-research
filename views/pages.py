@@ -51,3 +51,8 @@ def typography():
 @app.route('/newsletter/', methods=['POST'])
 def newsletter():
     return redirect(url_for('index'))
+
+
+@app.route('/book-appointment/', methods=['POST'])
+def book_appointment():
+    return redirect(url_for('appointment'))
