@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="logo">
+      <h1>
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <span>C</span>ancer <i class="fa fa-plus" aria-hidden="true"></i>
+          <p>Cancer research</p>
+        </a>
+      </h1>
+    </div>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+    <nav class="menu menu--sebastian">
+      <ul id="m_nav_list" class="m_nav menu__list">
+        <li class="m_nav_item menu__item menu__item--current" id="m_nav_item_1">
+          <a href="{{ url_for('index') }}" class="menu__link"> Home </a>
+        </li>
+        <li class="m_nav_item menu__item" id="moble_nav_item_2">
+          <a href="{{ url_for('about') }}" class="menu__link"> About Us </a>
+        </li>
+        <li class="m_nav_item menu__item" id="moble_nav_item_3">
+          <a href="{{ url_for('appointment') }}" class="menu__link"> Appointment </a>
+        </li>
+        <li class="m_nav_item menu__item" id="moble_nav_item_4 dropdown">
+          <a href="#" class="menu__link dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+          <ul class="dropdown-menu agile_short_dropdown">
+            <li><a href="{{ url_for('icons') }}">Web Icons</a></li>
+            <li><a href="{{ url_for('typography') }}">Typography</a></li>
+          </ul>
+        </li>
+        <li class="m_nav_item menu__item" id="moble_nav_item_5">
+          <a href="{{ url_for('contact') }}" class="menu__link"> Contact </a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+</nav>

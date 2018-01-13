@@ -8,13 +8,89 @@
  
  Copyright © 2018. Victor. All rights reserved.
 -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Breast Cancer</title>
+  <title>{% block title %}{% endblock %} &bull; Breast Cancer Classification</title>
+  <!-- for-meta-tags-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+
+  <script type="application/x-javascript"> addEventListener("load", function () {
+    setTimeout(hideURLbar, 0);
+  }, false);
+
+  function hideURLbar() {
+    window.scrollTo(0, 1);
+  } </script>
+
+  <!-- //for-meta-tags-->
+  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css" media="screen"
+        Department=""/>
+  <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet" type="text/css" media="all"/>
+  <link href="{{ url_for('static', filename='css/ziehharmonika.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/JiSlider.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+  <!-- font-awesome icons -->
+  <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
+  <!-- //font-awesome icons -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+        rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
 </head>
+
 <body>
-  {% block body %}
-  {% endblock %}
-</body>
-</html>
+<div class="main" id="home">
+  <!-- Top header -->
+  <div class="header_agileinfo">
+
+    <div class="w3_agileits_header_text">
+      <ul class="top_agile_w3l_info_icons">
+        <li>
+          <i class="fa fa-home" aria-hidden="true"></i>Rufus Giwa, Owo, Ondo state.
+        </li>
+        <li class="second">
+          <i class="fa fa-phone" aria-hidden="true"></i>(+234) 814 120 5245
+        </li>
+        <li>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          <a href="mailto:research@cancer.com">research@cancer.com</a>
+        </li>
+      </ul>
+
+    </div>
+    <div class="agileinfo_social_icons">
+      <ul class="agileits_social_list">
+        <li>
+          <a href="#" class="w3_agile_facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="agile_twitter">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="w3_agile_rss">
+            <i class="fa fa-rss" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- Nav bar -->
+  <div class="header-bottom">
+    {% include '_includes/_nav.html' %}
+  </div>
+
+</div>
+
+{% block body %}
+{% endblock %}
+
+{% include '_includes/_footer.html' %}

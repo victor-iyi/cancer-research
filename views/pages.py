@@ -21,4 +21,28 @@ def index():
 @app.route('/about/')
 @back.anchor
 def about():
-    return render_template('index.html')
+    return render_template('about.html')
+
+
+@app.route('/contact/')
+@back.anchor
+def contact():
+    return render_template('contact.html')
+
+
+@app.route('/appointment/')
+@back.anchor
+def appointment():
+    return render_template('appointment.html')
+
+
+@app.route('/icons/')
+@back.anchor
+def icons():
+    return render_template('icons.html')
+
+
+@app.route('/typography/')
+@back.anchor
+def typography():
+    return render_template('typography.html')
