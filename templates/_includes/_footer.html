@@ -2,36 +2,50 @@
 <div class="footer">
   <div class="container">
     <h4>Subscribe to <span>Newsletter</span></h4>
-    <form action="#" method="post">
+    <form action="{{ url_for('newsletter') }}" method="post">
       <input type="email" name="Email" placeholder="Enter Your Email..." required="">
       <input type="submit" value="Send">
     </form>
+
     <div class="agile_footer_copy">
       <div class="w3agile_footer_grids">
         <div class="col-md-4 w3agile_footer_grid">
           <h3>About Us</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat
-							non proident, sunt in culpa qui officia deserunt mollit.</span></p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.
+            <span>
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit.
+            </span>
+          </p>
         </div>
         <div class="col-md-4 w3agile_footer_grid">
           <h3>Contact Info</h3>
           <ul>
-            <li><i class="fa fa-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span>
+            <li>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>Rufus Giwa Poly, Owo, <span>Ondo state.</span>
             </li>
-            <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a
-                href="mailto:info@example.com">info@example.com</a></li>
-            <li><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 567</li>
+            <li>
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              <a href="mailto:research@cancer.com">research@cancer.com</a></li>
+            <li><i class="fa fa-phone" aria-hidden="true"></i>(+234) 814 120 5245</li>
           </ul>
         </div>
         <div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
           <h3>Navigation</h3>
           <ul>
-            <li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="gallery.html">Department</a>
+            <li>
+              <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+              <a href="{{ url_for('index') }}">Home</a>
             </li>
-            <li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a
-                href="appointment.html">Appointment</a></li>
-            <li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="about.html">About</a></li>
-            <li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="contact.html">Contact Us</a>
+            <li>
+              <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+              <a href="{{ url_for('appointment') }}">Appointment</a></li>
+            <li>
+              <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+              <a href="{{ url_for('about') }}">About</a></li>
+            <li>
+              <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
+              <a href="{{ url_for('contact') }}">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -40,13 +54,12 @@
     </div>
     <div class="w3_agileits_copy_right_social">
       <div class="col-md-6 agileits_w3layouts_copy_right">
-        <p>&copy; 2017 Health Plus. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        <p>&copy; 2018 Cancer Research. All rights reserved</p>
       </div>
       <div class="col-md-6 w3_agile_copy_right">
         <ul class="agileits_social_list">
           <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
           <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-          <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
           <li><a href="#" class="w3_agile_rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
         </ul>
       </div>
@@ -55,7 +68,9 @@
   </div>
 </div>
 <!-- //footer -->
+<!-- Scroll to top -->
 <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
 <!-- js -->
 <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/JiSlider.js') }}"></script>
@@ -75,7 +90,7 @@
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
   })();
@@ -110,32 +125,35 @@
   })
 </script>
 
-<!-- bootstrap-pop-up -->
+<!-- bootstrap-modal -->
 <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        Health Plus
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
+        Cancer Research
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
       <section>
         <div class="modal-body">
-          <img src="{{ url_for('static', filename='images/g9.jpg') }}" alt=" " class="img-responsive"/>
-          <p>Ut enim ad minima veniam, quis nostrum
-            exercitationem ullam corporis suscipit laboriosam,
-            nisi ut aliquid ex ea commodi consequatur? Quis autem
-            vel eum iure reprehenderit qui in ea voluptate velit
-            esse quam nihil molestiae consequatur, vel illum qui
-            dolorem eum fugiat quo voluptas nulla pariatur.
-            <i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-              esse quam nihil molestiae consequatur.</i></p>
+          <img src="{{ url_for('static', filename='images/g9.jpg') }}" alt="" class="img-responsive"/>
+          <p>
+            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
+            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
+            ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
+            fugiat quo voluptas nulla pariatur.
+            <i>
+              “Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+              esse quam nihil molestiae consequatur.”
+            </i>
+          </p>
         </div>
       </section>
     </div>
   </div>
 </div>
-<!-- //bootstrap-pop-up -->
+<!-- //bootstrap-modal -->
 
 <!-- flexSlider -->
 <script defer src="{{ url_for('static', filename='js/jquery.flexslider.js') }}"></script>
@@ -152,7 +170,7 @@
 <!-- //flexSlider -->
 
 
-<!-- start-smoth-scrolling -->
+<!-- start-smooth-scrolling -->
 <script type="text/javascript" src="{{ url_for('static', filename='js/move-top.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/easing.js') }}"></script>
 <script type="text/javascript">
@@ -163,7 +181,7 @@
     });
   });
 </script>
-<!-- start-smoth-scrolling -->
+<!-- //start-smooth-scrolling -->
 <script src="{{ url_for('static', filename='js/jarallax.js') }}"></script>
 <script src="{{ url_for('static', filename='js/SmoothScroll.min.js') }}"></script>
 <script type="text/javascript">

@@ -7,7 +7,7 @@
   
   Copyright © 2018. Victor. All rights reserved.
 """
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 from views import app, back
 
@@ -46,3 +46,8 @@ def icons():
 @back.anchor
 def typography():
     return render_template('typography.html')
+
+
+@app.route('/newsletter/', methods=['POST'])
+def newsletter():
+    return redirect(url_for('index'))
