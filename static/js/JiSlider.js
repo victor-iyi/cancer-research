@@ -110,7 +110,7 @@
 		var jw = this.width();
 		var slides = this.find('ul li').length;
 
-		if (setting.start > slides) {
+		if (setting.start < slides) {
 			throw "Start value is bigger than number of slides";
 		}
 
