@@ -24,9 +24,13 @@
   function hideURLbar() {
     window.scrollTo(0, 1);
   } </script>
-
+  <!-- Favicon -->
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
+  {% if 'appointment' in  request.url -%}
+    <link href="{{ url_for('static', filename='css/wickedpicker.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='css/jquery-ui.css') }}" rel="stylesheet">
+  {%- endif %}
   <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" media="all">
   <link href="{{ url_for('static', filename='css/flexslider.css') }}" rel="stylesheet" media="screen">
   <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet" media="all">

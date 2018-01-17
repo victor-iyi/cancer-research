@@ -74,6 +74,21 @@
 <!-- js -->
 <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/JiSlider.js') }}"></script>
+{# Load date and time picker if we're on the appointment page. #}
+{% if 'appointment' in request.url -%}
+  <script type="text/javascript" src="{{ url_for('static', filename='js/wickedpicker.js') }}"></script>
+  <script type="text/javascript">
+    $('.timepicker').wickedpicker({twentyFour: false});
+  </script>
+  <!-- Calendar -->
+  <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+  <script>
+    $(function () {
+      $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+    });
+  </script>
+  <!-- //Calendar -->
+{%- endif %}
 <script>
   $(window).load(function () {
     $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: true}).addClass('ff')
