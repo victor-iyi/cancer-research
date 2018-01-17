@@ -27,19 +27,20 @@
 
   <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 
-  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all"/>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/flexslider.css') }}" type="text/css" media="screen"
-        Department=""/>
-  <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet" type="text/css" media="all"/>
+  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" media="all">
+  <link href="{{ url_for('static', filename='css/flexslider.css') }}" rel="stylesheet" media="screen">
+  <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet" media="all">
   <link href="{{ url_for('static', filename='css/ziehharmonika.css') }}" rel="stylesheet" type="text/css">
   <link href="{{ url_for('static', filename='css/JiSlider.css') }}" rel="stylesheet">
-  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css" media="all"/>
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" media="all">
   <!-- font-awesome icons -->
   <link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
   <!-- //font-awesome icons -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
-        rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+  <!-- google-fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,
+    800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+  <!-- //google-fonts -->
 </head>
 
 <body>
@@ -86,7 +87,7 @@
   </div>
   <!-- Nav bar -->
   <div class="header-bottom">
-    {% include '_includes/_nav.html' %}
+    {%- include '_includes/_nav.html' %}
   </div>
 
 </div>

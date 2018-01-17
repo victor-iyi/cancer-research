@@ -7,7 +7,7 @@
   
   Copyright © 2018. Victor. All rights reserved.
 """
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 
 from views import app, back
 
@@ -24,9 +24,11 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/contact/')
+@app.route('/contact/', methods=['GET', 'POST'])
 @back.anchor
 def contact():
+    if request.method == 'POST':
+        return render_template('contact.html')
     return render_template('contact.html')
 
 
@@ -60,7 +62,7 @@ def single():
 ################################################################################################
 @app.route('/newsletter/', methods=['POST'])
 def newsletter():
-    return redirect(url_for('index'))
+    return back.redirect()
 
 
 @app.route('/book-appointment/', methods=['POST'])

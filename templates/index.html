@@ -1,11 +1,15 @@
 {% extends 'layouts/main.html' %}
 
-{% block title %}Home{% endblock %}
+{% block title -%}Home{%- endblock %}
 
-{% block body %}
+{% block body -%}
+  {# Slider #}
+  {%- include '_includes/_slider.html' %}
 
-  {% include '_includes/_about.html' %}
+  {# About #}
+  {%- include '_includes/_about.html' %}
 
+  {# Advertisements/services #}
   <!-- services-bottom -->
   <div class="services-bottom">
     <div class="col-md-5 wthree_services_bottom_right">
@@ -19,12 +23,12 @@
             </li>
             <li>
               <div class="w3_agile_services_bottom_right_grid1">
-                <p class="w3layouts_head_slide">Hospital <span> Departments</span></p>
+                <p class="w3layouts_head_slide">Machine <span> Learning</span></p>
               </div>
             </li>
             <li>
               <div class="w3_agile_services_bottom_right_grid2">
-                <p class="w3layouts_head_slide">Cancer <span>Research</span></p>
+                <p class="w3layouts_head_slide">Breast <span>Classification</span></p>
               </div>
             </li>
           </ul>
@@ -38,15 +42,16 @@
           <div class="agile_services_bottom_l_grid1">
             <img src="{{ url_for('static', filename='images/g4.jpg') }}" alt=" " class="img-responsive"/>
             <div class="w3_service_bottom_grid_pos">
-              <h3>Quality Care</h3>
+              <h3>Accurate Services</h3>
             </div>
           </div>
         </div>
         <div class="col-md-6 w3_agileits_services_bottom_r_grid">
-          <h4>Best Surgeons</h4>
-          <p>Praesent vulputate ipsum a velit tempor convallis.
-            Phasellus ultrices lorem eget erat tempus commodo efficitur odio.</p>
-
+          <h4>Best Medical Research</h4>
+          <p>
+            Praesent vulputate ipsum a velit tempor convallis.
+            Phasellus ultrices lorem eget erat tempus commodo efficitur odio.
+          </p>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -73,4 +78,4 @@
   </div>
   <!-- //services-bottom -->
 
-{% endblock %}
+{%- endblock %}

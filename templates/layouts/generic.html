@@ -1,6 +1,6 @@
-{% with title=self.title() %}
+{% with title=self.title() -%}
   {% include '_includes/_header.html' %}
-{% endwith %}
+{%- endwith %}
 
 <!-- banner -->
 <div class="banner1 jarallax">
@@ -18,7 +18,7 @@
 </div>
 <!-- /banner -->
 
-{% block body %}
-{% endblock %}
+{% block body -%}
+{%- endblock %}
 
-{% include '_includes/_footer.html' %}
+{%- include '_includes/_footer.html' %}
