@@ -2489,7 +2489,9 @@ h2.typoh2 {
   padding: 50px 30px;
 }
 
-.book-appointment input[type="text"], .book-appointment input[type="date"], .book-appointment input[type="time"], .book-appointment input[type="email"], .book-appointment textarea, select {
+.book-appointment input[type="text"], .book-appointment input[type="date"],
+.book-appointment input[type="time"], .book-appointment input[type="email"],
+.book-appointment textarea, select, .book-appointment input[type="number"] {
   width: 100%;
   color: #fff;
   outline: none;

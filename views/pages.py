@@ -9,6 +9,7 @@
 """
 from flask import render_template, request, escape
 
+from models import classification as clf
 from views import app, back
 
 
@@ -50,6 +51,12 @@ def appointment():
 @app.route('/classification/', methods=['GET', 'POST'])
 def classification():
     if request.method == 'POST':
+        # store request form into a Python dictionary.
+        data = dict(request.form)
+        name = data.pop('name')[0]  # remove 'name' key
+        # prediction result
+        results = clf.process(data)
+        print(results, name)
         return render_template('classification.html')
     return render_template('classification.html')
 

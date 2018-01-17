@@ -12,42 +12,52 @@
       <!-- Prediction form -->
       <div class="book-appointment">
         <h4>Doctor's Diagnosis</h4>
-        <form action="{{ url_for('appointment') }}" method="post">
+        <form action="{{ url_for('classification') }}" method="post">
           <!-- Left form elements -->
           <div class="left-agileits-w3layouts same">
             <div class="gaps">
-              <p>Patient Name</p>
+              <p>Patient name</p>
               <input type="text" name="name" placeholder="" required/>
             </div>
             <div class="gaps">
-              <p>Phone Number</p>
-              <input type="text" name="number" placeholder="" required/>
+              <p>Clump Thickness</p>
+              <input type="number" name="clump_thickness" placeholder="" step="1" min="1" max="10" required/>
             </div>
             <div class="gaps">
-              <p>Email</p>
-              <input type="email" name="email" placeholder="" required/>
+              <p>Uniformity of Cell Size</p>
+              <input type="number" name="uniformity_of_cell_size" placeholder="" step="1" min="1" max="10" required/>
+            </div>
+            <div class="gaps">
+              <p>Uniformity of Cell Shape</p>
+              <input type="number" name="uniformity_of_cell_shape" placeholder="" step="1" min="1" max="10" required/>
+            </div>
+            <div class="gaps">
+              <p>Marginal Adhesion</p>
+              <input type="number" name="marginal_adhesion" placeholder="" step="1" min="1" max="10" required/>
             </div>
           </div>
           <!-- Right form elements -->
           <div class="right-agileinfo same">
             <div class="gaps">
-              <p>Select Date</p>
-              <input id="datepicker1" name="date" type="text" value=""
-                     onfocus="this.value = '';" title=""
-                     onblur="if (this.value === '') {this.value = 'mm/dd/yyyy';}"
-                     required>
+              <p>Single Epithelial Cell Size</p>
+              <input type="number" name="single_epithelial_cell_size" placeholder="" step="1" min="1" max="10"
+                     required/>
             </div>
             <div class="gaps">
-              <p>Gender</p>
-              <select class="option" name="gender" title="">
-                <option hidden>-- Select a gender --</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
+              <p>Bare Nuclei</p>
+              <input type="number" name="bare_nuclei" placeholder="" step="1" min="1" max="10" required/>
             </div>
             <div class="gaps">
-              <p>Time</p>
-              <input type="text" id="timepicker" name="time" class="timepicker option" value="" title="">
+              <p>Bland Chromatin</p>
+              <input type="number" name="bland_chromatin" placeholder="" step="1" min="1" max="10" required/>
+            </div>
+            <div class="gaps">
+              <p>Normal nucleoli</p>
+              <input type="number" name="normal_nucleoli" placeholder="" step="1" min="1" max="10" required/>
+            </div>
+            <div class="gaps">
+              <p>Mitoses</p>
+              <input type="number" name="mitoses" placeholder="" step="1" min="1" max="10" required/>
             </div>
           </div>
           <div class="clearfix"></div>
