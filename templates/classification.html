@@ -1,16 +1,17 @@
 {% extends 'layouts/generic.html' %}
-{% block title %}Appointment{% endblock %}
-{% block body %}
 
-  <!-- appointment -->
+{% block title -%}Classification{%- endblock %}
+
+{% block body -%}
+  <!-- breast-classification -->
   <div class="banner-bottom" id="about">
     <div class="container">
-      <h2 class="w3_heade_tittle_agile">Appointment</h2>
-      <p class="sub_t_agileits">See an experts</p>
+      <h2 class="w3_heade_tittle_agile">Breast Cancer Prediction</h2>
+      <p class="sub_t_agileits">Which kind of breast cancer do you have?</p>
 
-      <!-- Appointment form -->
+      <!-- Prediction form -->
       <div class="book-appointment">
-        <h4>Make an appointment</h4>
+        <h4>Doctor's Diagnosis</h4>
         <form action="{{ url_for('appointment') }}" method="post">
           <!-- Left form elements -->
           <div class="left-agileits-w3layouts same">
@@ -50,11 +51,10 @@
             </div>
           </div>
           <div class="clearfix"></div>
-          <input type="submit" value="Make an Appointment">
+          <input type="submit" value="Predict">
         </form>
       </div>
     </div>
   </div>
-  <!-- appointment -->
-
-{% endblock %}
+  <!-- //breast-classification -->
+{%- endblock %}

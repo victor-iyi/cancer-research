@@ -47,6 +47,13 @@ def appointment():
     return render_template('appointment.html')
 
 
+@app.route('/classification/', methods=['GET', 'POST'])
+def classification():
+    if request.method == 'POST':
+        return render_template('classification.html')
+    return render_template('classification.html')
+
+
 @app.route('/icons/')
 @back.anchor
 def icons():
