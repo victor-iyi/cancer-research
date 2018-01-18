@@ -37,6 +37,7 @@ def contact():
 @back.anchor
 def appointment():
     if request.method == 'POST':
+        # print(dict(request.form))
         name = escape(request.form['name'])
         phone = escape(request.form['number'])
         email = escape(request.form['email'])
@@ -59,12 +60,6 @@ def classification():
         print(results, name)
         return render_template('classification.html')
     return render_template('classification.html')
-
-
-@app.route('/icons/')
-@back.anchor
-def icons():
-    return render_template('icons.html')
 
 
 @app.route('/typography/')
