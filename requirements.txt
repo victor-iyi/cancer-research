@@ -8,13 +8,13 @@
 # Start by cloning the project from github:
 # ```
 #   $ cd ~/Documents/
-#   $ git clone https://github.com/victor-iyiola/folktales.git
+#   $ git clone https://github.com/victor-iyiola/breast-cancer.git
 #   $ cd folktales
 # ```
 #
 # or:
 #
-# You can download the `.zip` project files [here](https://github.com/victor-iyiola/folktales)
+# You can download the `.zip` project files [here](https://github.com/victor-iyiola/breast-cancer)
 # and extract the project files.
 #
 # ```

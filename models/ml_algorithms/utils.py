@@ -22,6 +22,7 @@ def preprocess(data_dir):
         Directory containing datafiles and names
     :return: features, labels
     """
+    # noinspection PyBroadException
     try:
         data_files = __list_files(data_dir)
         data_file = __extract_data_file(data_files)
