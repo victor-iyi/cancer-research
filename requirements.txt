@@ -1,0 +1,42 @@
+#
+# ```
+#   $ pip install --upgrade pip
+# ```
+#
+# Then you probably want to work from your local PC:
+#
+# Start by cloning the project from github:
+# ```
+#   $ cd ~/Documents/
+#   $ git clone https://github.com/victor-iyiola/folktales.git
+#   $ cd folktales
+# ```
+#
+# or:
+#
+# You can download the `.zip` project files [here](https://github.com/victor-iyiola/folktales)
+# and extract the project files.
+#
+# ```
+#   $ cd <your_download_dir>
+#   $ cd folktales
+# ```
+#
+# Then install these requirements:
+# ```
+#   $ pip install --upgrade -r requirements.txt
+# ```
+#
+# Finally, start the project:
+# ```
+#   $ python __init__.py
+# ```
+#
+
+jinja2==2.10
+werkzeug==0.14.1
+flask==0.12.2
+numpy==1.14.0
+scipy==1.0.0
+pandas==0.22.0
+scikit-learn==0.19.1
