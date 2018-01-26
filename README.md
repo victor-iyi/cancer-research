@@ -27,7 +27,7 @@ Start by cloning the project from github:
 ```
 $ cd ~/Documents/
 $ git clone https://github.com/victor-iyiola/breast-cancer.git
-$ cd folktales
+$ cd breast-cancer
 ``` 
 
 or:
@@ -37,7 +37,7 @@ project files.
 
 ```
 $ cd <your_download_dir>
-$ cd folktales
+$ cd breast-cancer
 ```
 
 Then install these requirements:
