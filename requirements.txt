@@ -8,18 +8,18 @@
 # Start by cloning the project from github:
 # ```
 #   $ cd ~/Documents/
-#   $ git clone https://github.com/victor-iyiola/breast-cancer.git
-#   $ cd breast-cancer
+#   $ git clone https://github.com/victor-iyiola/cancer-research.git
+#   $ cd cancer-research
 # ```
 #
 # or:
 #
-# You can download the `.zip` project files [here](https://github.com/victor-iyiola/breast-cancer)
+# You can download the `.zip` project files [here](https://github.com/victor-iyiola/cancer-research)
 # and extract the project files.
 #
 # ```
 #   $ cd <your_download_dir>
-#   $ cd breast-cancer
+#   $ cd cancer-research
 # ```
 #
 # Then install these requirements:

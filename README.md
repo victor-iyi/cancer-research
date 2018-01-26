@@ -26,18 +26,18 @@ Then you probably want to work from your local PC:
 Start by cloning the project from github:
 ```
 $ cd ~/Documents/
-$ git clone https://github.com/victor-iyiola/breast-cancer.git
-$ cd breast-cancer
+$ git clone https://github.com/victor-iyiola/cancer-research.git
+$ cd cancer-research
 ``` 
 
 or:
 
-You can download the `.zip` project files [here](https://github.com/victor-iyiola/breast-cancer) and extract the 
+You can download the `.zip` project files [here](https://github.com/victor-iyiola/cancer-research) and extract the 
 project files.
 
 ```
 $ cd <your_download_dir>
-$ cd breast-cancer
+$ cd cancer-research
 ```
 
 Then install these requirements:
@@ -52,4 +52,4 @@ $ python __init__.py
 
 ## Contribution
 
-This project is opened under [MIT 2.0 license](https://github.com/victor-iyiola/breast-cancer/blob/master/LICENSE).
+This project is opened under [MIT 2.0 license](https://github.com/victor-iyiola/cancer-research/blob/master/LICENSE).
