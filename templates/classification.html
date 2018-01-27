@@ -2,69 +2,62 @@
 
 {% block title -%}Classification{%- endblock %}
 
-{% block body -%}
-  <!-- breast-classification -->
-  <div class="banner-bottom" id="about">
-    <div class="container">
-      <h2 class="w3_heade_tittle_agile">Breast Cancer Prediction</h2>
-      <p class="sub_t_agileits">Which kind of breast cancer do you have?</p>
+{% block description -%}Which kind of breast cancer do you have?{%- endblock %}
 
-      <!-- Prediction form -->
-      <div class="book-appointment">
-        <h4>Doctor's Diagnosis</h4>
-        <form action="{{ url_for('classification_form') }}" method="post">
-          <!-- Left form elements -->
-          <div class="left-agileits-w3layouts same">
-            <div class="gaps">
-              <p>Patient name</p>
-              <input type="text" name="name" placeholder="" required/>
-            </div>
-            <div class="gaps">
-              <p>Clump Thickness</p>
-              <input type="number" name="clump_thickness" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Uniformity of Cell Size</p>
-              <input type="number" name="uniformity_of_cell_size" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Uniformity of Cell Shape</p>
-              <input type="number" name="uniformity_of_cell_shape" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Marginal Adhesion</p>
-              <input type="number" name="marginal_adhesion" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-          </div>
-          <!-- Right form elements -->
-          <div class="right-agileinfo same">
-            <div class="gaps">
-              <p>Single Epithelial Cell Size</p>
-              <input type="number" name="single_epithelial_cell_size" placeholder="" step="1" min="1" max="10"
-                     required/>
-            </div>
-            <div class="gaps">
-              <p>Bare Nuclei</p>
-              <input type="number" name="bare_nuclei" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Bland Chromatin</p>
-              <input type="number" name="bland_chromatin" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Normal nucleoli</p>
-              <input type="number" name="normal_nucleoli" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-            <div class="gaps">
-              <p>Mitoses</p>
-              <input type="number" name="mitoses" placeholder="" step="1" min="1" max="10" required/>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-          <input type="submit" value="Predict">
-        </form>
+{% block content -%}
+  <!-- Prediction form -->
+  <div class="book-appointment">
+    <h4>Doctor's Diagnosis</h4>
+    <form action="{{ url_for('classification_form') }}" method="post">
+      <!-- Left form elements -->
+      <div class="left-agileits-w3layouts same">
+        <div class="gaps">
+          <p>Patient name</p>
+          <input type="text" name="name" placeholder="" required/>
+        </div>
+        <div class="gaps">
+          <p>Clump Thickness</p>
+          <input type="number" name="clump_thickness" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Uniformity of Cell Size</p>
+          <input type="number" name="uniformity_of_cell_size" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Uniformity of Cell Shape</p>
+          <input type="number" name="uniformity_of_cell_shape" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Marginal Adhesion</p>
+          <input type="number" name="marginal_adhesion" placeholder="" step="1" min="1" max="10" required/>
+        </div>
       </div>
-    </div>
+      <!-- Right form elements -->
+      <div class="right-agileinfo same">
+        <div class="gaps">
+          <p>Single Epithelial Cell Size</p>
+          <input type="number" name="single_epithelial_cell_size" placeholder="" step="1" min="1" max="10"
+                 required/>
+        </div>
+        <div class="gaps">
+          <p>Bare Nuclei</p>
+          <input type="number" name="bare_nuclei" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Bland Chromatin</p>
+          <input type="number" name="bland_chromatin" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Normal nucleoli</p>
+          <input type="number" name="normal_nucleoli" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+        <div class="gaps">
+          <p>Mitoses</p>
+          <input type="number" name="mitoses" placeholder="" step="1" min="1" max="10" required/>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <input type="submit" value="Predict">
+    </form>
   </div>
-  <!-- //breast-classification -->
 {%- endblock %}

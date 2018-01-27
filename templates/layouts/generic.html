@@ -1,5 +1,5 @@
 {% with title=self.title() -%}
-  {% include '_includes/_header.html' %}
+  {%- include '_includes/_header.html' %}
 {%- endwith %}
 
 <!-- banner -->
@@ -14,12 +14,25 @@
       <li><a href="{{ url_for('index') }}">Home</a><i>|</i></li>
       <li>{{ self.title() }}</li>
     </ul>
-    {%- include "_includes/_flash_msg.html" %}
   </div>
 </div>
 <!-- /banner -->
 
 {% block body -%}
-{%- endblock %}
+  <!-- {{ self.title()|lower|replace(' ', '-') }} -->
+  <div class="banner-bottom" id="about">
+    <div class="container">
+      <h2 class="w3_heade_tittle_agile">{{ self.title()|title }}</h2>
+      <p class="sub_t_agileits">{% block description -%}{%- endblock %}</p>
+
+      {%- include '_includes/_flash_msg.html' %}
+
+      {% block content -%}
+      {%- endblock content %}
+
+    </div>
+  </div>
+  <!-- /{{ self.title()|lower|replace(' ', '-') }} -->
+{%- endblock body %}
 
 {%- include '_includes/_footer.html' %}
