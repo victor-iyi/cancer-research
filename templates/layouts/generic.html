@@ -14,6 +14,7 @@
       <li><a href="{{ url_for('index') }}">Home</a><i>|</i></li>
       <li>{{ self.title() }}</li>
     </ul>
+    {%- include "_includes/_flash_msg.html" %}
   </div>
 </div>
 <!-- /banner -->

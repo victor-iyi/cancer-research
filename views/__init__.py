@@ -15,6 +15,14 @@ app.config.from_object('models.config.Development')
 # noinspection PyUnresolvedReferences
 from helpers import back
 
-# External routes/views
-from views.pages import *
+################################################################################################
+# +———————————————————————————————————————————————————————————————————————————————————————————+
+# | External views
+# +———————————————————————————————————————————————————————————————————————————————————————————+
+################################################################################################
+# noinspection PyUnresolvedReferences
+from views.controllers import *
+# noinspection PyUnresolvedReferences
 from views.error import *
+# noinspection PyUnresolvedReferences
+from views.forms import *

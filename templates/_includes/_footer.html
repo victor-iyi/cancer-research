@@ -2,7 +2,7 @@
 <div class="footer">
   <div class="container">
     <h4>Subscribe to <span>Newsletter</span></h4>
-    <form action="{{ url_for('newsletter') }}" method="post">
+    <form action="{{ url_for('newsletter_form') }}" method="post">
       <input type="email" name="Email" placeholder="Enter Your Email..." required="">
       <input type="submit" value="Send">
     </form>
@@ -11,12 +11,9 @@
       <div class="w3agile_footer_grids">
         <div class="col-md-4 w3agile_footer_grid">
           <h3>About Us</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.
-            <span>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit.
-            </span>
-          </p>
+          <p>The importance of good health cannot be overemphasized.
+            <span>Therefore, we have the best experts in Medicine and
+              Technology.</span></p>
         </div>
         <div class="col-md-4 w3agile_footer_grid">
           <h3>Contact Info</h3>

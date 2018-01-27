@@ -45,12 +45,12 @@
 
       <div class="contact-form-aits">
         <!-- Contact form -->
-        <form action="{{ url_for('contact') }}" method="post">
-          <input type="text" class="margin-right" name="Name" placeholder="Name" required>
-          <input type="email" name="Email" placeholder="Email" required>
-          <input type="text" class="margin-right" name="Phone Number" placeholder="Phone Number" required>
-          <input type="text" name="Subject" placeholder="Subject" required>
-          <textarea name="Message" placeholder="Message" required></textarea>
+        <form action="{{ url_for('contact_form') }}" method="post">
+          <input type="text" class="margin-right" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" class="margin-right" name="number" placeholder="Phone Number" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Message" required></textarea>
           <div class="send-button agileits w3layouts">
             <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
           </div>

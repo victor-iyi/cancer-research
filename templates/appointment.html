@@ -11,7 +11,8 @@
       <!-- Appointment form -->
       <div class="book-appointment">
         <h4>Make an appointment</h4>
-        <form action="{{ url_for('appointment') }}" method="post">
+        {%- include "_includes/_flash_msg.html" %}
+        <form action="{{ url_for('appointment_form') }}" method="post">
           <!-- Left form elements -->
           <div class="left-agileits-w3layouts same">
             <div class="gaps">
@@ -39,7 +40,7 @@
             <div class="gaps">
               <p>Gender</p>
               <select class="option" name="gender" title="">
-                <option hidden>-- Select a gender --</option>
+                <option hidden></option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>

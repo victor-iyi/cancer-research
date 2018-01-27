@@ -1,4 +1,4 @@
-{% extends 'layouts/generic.html' %}
+{%- extends 'layouts/generic.html' %}
 
 {% block title -%}Classification{%- endblock %}
 
@@ -12,7 +12,7 @@
       <!-- Prediction form -->
       <div class="book-appointment">
         <h4>Doctor's Diagnosis</h4>
-        <form action="{{ url_for('classification') }}" method="post">
+        <form action="{{ url_for('classification_form') }}" method="post">
           <!-- Left form elements -->
           <div class="left-agileits-w3layouts same">
             <div class="gaps">
