@@ -151,14 +151,7 @@
         <div class="modal-body">
           <img src="{{ url_for('static', filename='images/g9.jpg') }}" alt="" class="img-responsive"/>
           <p>
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in
-            ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum
-            fugiat quo voluptas nulla pariatur.
-            <i>
-              “Quis autem vel eum iure reprehenderit qui in ea voluptate velit
-              esse quam nihil molestiae consequatur.”
-            </i>
+            Prediction: <span class="label" id="cancer-result"></span>
           </p>
         </div>
       </section>
@@ -206,6 +199,7 @@
 </script>
 
 <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 <!-- //for bootstrap working -->
 <!-- here stars scrolling icon -->
 <script type="text/javascript">

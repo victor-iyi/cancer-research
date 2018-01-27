@@ -7,9 +7,8 @@
   
   Copyright © 2018. Victor. All rights reserved.
 """
-from flask import render_template, request, escape
+from flask import render_template
 
-from models import classification as clf
 from views import app, back
 
 
@@ -25,21 +24,7 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/contact/', methods=['GET'])
-@back.anchor
-def contact():
-    if request.method == 'POST':
-        return render_template('contact.html')
-    return render_template('contact.html')
-
-
-@app.route('/appointment/', methods=['GET'])
-@back.anchor
-def appointment():
-    return render_template('appointment.html')
-
-
-@app.route('/classification/', methods=['GET'])
+@app.route('/classification/')
 @back.anchor
 def classification(result=None):
     if result:
@@ -47,12 +32,13 @@ def classification(result=None):
     return render_template('classification.html')
 
 
-@app.route('/typography/')
+@app.route('/appointment/')
 @back.anchor
-def typography():
-    return render_template('typography.html')
+def appointment():
+    return render_template('appointment.html')
 
 
-@app.route('/single/')
-def single():
-    return render_template('single.html')
+@app.route('/contact/')
+@back.anchor
+def contact():
+    return render_template('contact.html')

@@ -7,7 +7,7 @@
   Created on 27 January, 2018 @ 1:54 AM.
   Copyright © 2018. Victor. All rights reserved.
 """
-from flask import redirect, url_for, request, escape, flash
+from flask import redirect, url_for, request, escape, flash, jsonify
 from views import app, back
 from models import classification as clf
 
@@ -42,12 +42,12 @@ def appointment_form():
     return redirect(url_for('appointment'))
 
 
-@app.route('/_classification', methods=['POST'])
+@app.route('/_classification')
 def classification_form():
     # store request form into a Python dictionary.
-    data = dict(request.form)
+    data = dict(request.args)
     name = data.pop('name')[0]  # remove 'name' key
     # prediction result
     result = clf.process(data)
-    flash(result, name)
-    return redirect(url_for('classification', result=result))
+    data = {'name': name, 'result': result}
+    return jsonify(data=data)
