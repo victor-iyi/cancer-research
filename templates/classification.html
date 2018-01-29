@@ -8,7 +8,7 @@
   <!-- Prediction form -->
   <div class="book-appointment">
     <h4>Doctor's Diagnosis</h4>
-    <form action="" method="get">
+    <form action="{{ url_for('appointment_form') }}" method="get">
       <!-- Left form elements -->
       <div class="left-agileits-w3layouts same">
         <div class="gaps">
@@ -57,8 +57,8 @@
         </div>
       </div>
       <div class="clearfix"></div>
-{#      <input type="button" value="Predict" id="predict">#}
-      <a href="#" class="button" id="predict">Predict</a>
+      <input type="submit" value="Predict" id="predict">
+{#      <a href="#" class="button" id="predict">Predict</a>#}
     </form>
   </div>
 {%- endblock %}
