@@ -46,6 +46,7 @@ def appointment_form():
 def classification_form():
     # store request form into a Python dictionary.
     data = dict(request.args)
+    print(data)
     name = data.pop('name')[0]  # remove 'name' key
     # prediction result
     result = clf.process(data)

@@ -10,9 +10,10 @@
 
 (function ($) {
 
-  $('#predict').on('click', function (e) {
+  $('#classification-form').on('submit', function (e) {
     e.preventDefault();
-    $.getJSON('/_classification_form', {
+
+    $.getJSON('/_classification', {
 
       name: $('input[name="name"]').val(),
       clump_thickness: $('input[name="clump_thickness"]').val(),
