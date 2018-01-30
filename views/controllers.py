@@ -26,16 +26,8 @@ def about():
 
 @app.route('/classification/')
 @back.anchor
-def classification(result=None):
-    if result:
-        print(result)
+def classification():
     return render_template('classification.html')
-
-
-@app.route('/appointment/')
-@back.anchor
-def appointment():
-    return render_template('appointment.html')
 
 
 @app.route('/contact/')

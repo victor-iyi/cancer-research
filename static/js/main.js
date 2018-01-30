@@ -10,7 +10,7 @@
 
 (function ($) {
 
-  $('#classification-form').on('submit', function (e) {
+  $('#prediction-form').on('submit', function (e) {
     e.preventDefault();
 
     $.getJSON('/_classification', {
