@@ -36,7 +36,7 @@
             </li>
             <li>
               <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
-              <a href="{{ url_for('appointment') }}">Appointment</a></li>
+              <a href="{{ url_for('classification') }}">Classification</a></li>
             <li>
               <span class="fa fa-long-arrow-right" aria-hidden="true"></span>
               <a href="{{ url_for('about') }}">About</a></li>
@@ -71,21 +71,6 @@
 <!-- js -->
 <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/JiSlider.js') }}"></script>
-{# Load date and time picker if we're on the appointment page. #}
-{% if 'appointment' in request.url -%}
-  <script type="text/javascript" src="{{ url_for('static', filename='js/wickedpicker.js') }}"></script>
-  <script type="text/javascript">
-    $('.timepicker').wickedpicker({twentyFour: false});
-  </script>
-  <!-- Calendar -->
-  <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
-  <script>
-    $(function () {
-      $("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
-    });
-  </script>
-  <!-- //Calendar -->
-{%- endif %}
 <script>
   $(window).load(function () {
     $('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: true}).addClass('ff')
@@ -137,28 +122,7 @@
   })
 </script>
 
-<!-- bootstrap-modal -->
-<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        Cancer Research
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <section>
-        <div class="modal-body">
-          <img src="{{ url_for('static', filename='images/g9.jpg') }}" alt="" class="img-responsive"/>
-          <p>
-            Prediction: <span class="label" id="cancer-result"></span>
-          </p>
-        </div>
-      </section>
-    </div>
-  </div>
-</div>
-<!-- //bootstrap-modal -->
+{%- include "_includes/_modal.html" %}
 
 <!-- flexSlider -->
 <script defer src="{{ url_for('static', filename='js/jquery.flexslider.js') }}"></script>

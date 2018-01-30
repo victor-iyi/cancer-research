@@ -5,10 +5,11 @@
 {% block description -%}Which kind of breast cancer do you have?{%- endblock %}
 
 {% block content -%}
-  <!-- Prediction form -->
   <div class="classification">
-    <h4>Doctor's Diagnosis</h4>
-    <form action="{{ url_for('classification_form') }}" id="prediction-form" method="get">
+
+    <!-- Prediction form -->
+    <h4>Doctor's Diagnostic Report</h4>
+    <form action="{{ url_for('classification_form') }}" method="get" id="prediction-form">
       <!-- Left form elements -->
       <div class="left-agileits-w3layouts same">
         <div class="gaps">
@@ -58,7 +59,7 @@
       </div>
       <div class="clearfix"></div>
       <input type="submit" value="Predict" id="predict">
-{#      <a href="#" class="button" id="predict">Predict</a>#}
     </form>
+
   </div>
 {%- endblock %}

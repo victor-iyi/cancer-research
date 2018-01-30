@@ -25,7 +25,7 @@ def process(data):
     clf.train(x, y)
     prediction = clf.predict(values)
     prediction = int(prediction[0])
-    CLASS_NAMES = {2: 'malignant', 4: 'benign'}
+    CLASS_NAMES = {2: 'Malignant', 4: 'Benign'}
 
     return {
         'prediction': CLASS_NAMES[prediction]

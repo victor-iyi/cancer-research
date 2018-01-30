@@ -28,12 +28,12 @@
 
     }, function (data) {
       var $label = $('#cancer-result');
-      var $header = $('.modal-header');
+      var $name = $('#patient-name');
 
       var result = data.data.result.prediction;
       var name = data.data.name;
       $label.text(result);
-      $header.text(name);
+      $name.text(name);
       // use appropriate class label
       if (result === 'benign') {
         $label.addClass('label-success');

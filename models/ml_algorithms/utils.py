@@ -26,7 +26,6 @@ def preprocess(data_dir):
     try:
         data_files = __list_files(data_dir)
         data_file = __extract_data_file(data_files)
-        print(data_file)
         df = pd.read_csv(data_file)
         df.replace('?', 0, inplace=True)
         df.drop(['id'], axis=1, inplace=True)

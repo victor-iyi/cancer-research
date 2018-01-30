@@ -13,7 +13,7 @@ app = Flask('__main__')
 app.config.from_object('models.config.Development')
 
 # noinspection PyUnresolvedReferences
-from helpers import back
+from helpers.back import back
 
 ################################################################################################
 # +———————————————————————————————————————————————————————————————————————————————————————————+
@@ -23,6 +23,6 @@ from helpers import back
 # noinspection PyUnresolvedReferences
 from views.controllers import *
 # noinspection PyUnresolvedReferences
-from views.error import *
-# noinspection PyUnresolvedReferences
 from views.forms import *
+# noinspection PyUnresolvedReferences
+from views.error import *
