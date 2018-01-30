@@ -35,7 +35,7 @@
       $label.text(result);
       $name.text(name);
       // use appropriate class label
-      if (result === 'benign') {
+      if (result.toString().toLowerCase() === 'benign') {
         $label.addClass('label-success');
       } else {
         $label.addClass('label-danger');
