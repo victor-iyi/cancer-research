@@ -46,9 +46,11 @@ def preprocess(data_dir):
         return False
 
 
-def split(X, y, test_size=0.1, **kwargs):
-    train, test = train_test_split(X, y, test_size=test_size, **kwargs)
-    return train, test
+def split(features, labels, test_size=0.1, **kwargs):
+    X_train, X_test, y_train, y_test = train_test_split(features, labels,
+                                                        test_size=test_size,
+                                                        **kwargs)
+    return X_train, y_train, X_test, y_test
 
 
 def __list_files(directory):

@@ -36,7 +36,7 @@ def process(data: dict=None, **kwargs):
     result = {}  # return value.
 
     # For inference:
-    if mode == ModeKeys.INFERENCE:
+    if mode.upper() == ModeKeys.INFERENCE.upper():
         if data is None:
             raise ValueError("Supply values to use for inference.")
 
@@ -59,18 +59,19 @@ def process(data: dict=None, **kwargs):
         x, y = utils.preprocess(data_dir=BREAST_CANCER_DATASET)
 
         # Split data into training & testing set.
-        train, test = utils.split(x, y, test_size=0.1)
+        X_train, y_train, X_test, y_test = utils.split(x, y, test_size=0.1)
+        result["n_train"], result["n_test"] = len(y_train), len(y_test)
 
-        if mode == ModeKeys.TRAIN:
+        if mode.upper() == ModeKeys.TRAIN.upper():
             # Create a new classifier.
             clf = Models[algorithm]()
 
             # Train classifier on training set.
-            clf.train(*train)
+            clf.train(X_train, y_train)
 
             # Create save directory if it doesn't exist.
             if not os.path.isdir(os.path.dirname(clf_path)):
-                os.makedirs(clf_path)
+                os.makedirs(os.path.dirname(clf_path))
 
             # Save the trained classifier.
             with open(clf_path, 'wb') as f:
@@ -80,9 +81,9 @@ def process(data: dict=None, **kwargs):
             raise FileNotFoundError("{} hasn't been trained.".format(clf_path))
 
         # Test model.
-        with open(clf_path) as f:
-            clf = pickel.load(f)
+        with open(clf_path, 'rb') as f:
+            clf = pickle.load(f)
 
-        result['score'] = clf.test(*test)
+        result['score'] = '{:.02%}'.format(clf.test(X_test, y_test))
 
     return result

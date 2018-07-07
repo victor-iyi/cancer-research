@@ -24,7 +24,7 @@ class SVM(base.Model):
 
 class NaiveBayes(base.Model):
     def __init__(self, **kwargs):
-        super(DecisionTree, self).__init__()
+        super(NaiveBayes, self).__init__()
 
         self.model = GaussianNB(**kwargs)
 

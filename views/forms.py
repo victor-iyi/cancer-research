@@ -50,13 +50,17 @@ def classification_form():
 def settings_form():
     # store request form into a Python dictionary.
     data = dict(request.args)
-    name = data.pop('name')[0]  # remove 'name' key
+
+    # Retrieve data.
+    algorithm = data.pop("algorithm")[0]
+    mode = data.pop("mode")[0]
 
     try:
-        # prediction result
-        result = clf.process(data)
-        data = {'name': name, 'result': result}
+        # Process train/test.
+        result = clf.process(algorithm=algorithm,
+                             mode=mode)
+        data = {'result': result}
     except Exception as e:
-        data = {"error": e}
+        data = {"error": str(e)}
 
     return jsonify(data=data)

@@ -19,6 +19,12 @@ p, ul li, ol li {
   font-family: 'Lato', sans-serif;
 }
 
+p.error {
+  color: 'red';
+  letter-spacing: 1px;
+  font-size: 1.5em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
 
@@ -260,6 +266,7 @@ ul.top_agile_w3l_info_icons i {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
+  transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
   font-size: 0.9em;
 }
@@ -327,7 +334,7 @@ ul.top_agile_w3l_info_icons i {
   top: 2%;
 }
 
-}
+/* } */
 /*-- nav-effect --*/
 .menu__list {
   position: relative;
@@ -2504,12 +2511,16 @@ h2.typoh2 {
   background: rgb(62, 61, 61);
 }
 
+select option {
+  background: rgb(62, 61, 61);
+}
+
 .classification textarea {
   resize: none;
   height: 45px;
 }
 
-.classification select.option {
+.settings select.option {
   width: 100%;
   color: #fff;
   outline: none;
@@ -2518,12 +2529,8 @@ h2.typoh2 {
   padding: 12px 14px;
   border: none;
   margin: .3em 0em 1em;
-  background: rgb(62, 61, 61);
+  background: rgb(200, 200, 200);
   border-radius: 0px !important;
-}
-
-.classification select.option {
-  background: rgb(62, 61, 61);
 }
 
 .classification input[type=submit] {

@@ -9,6 +9,8 @@
  */
 
 (function ($) {
+  
+  $('.form-error').hide();
 
   $('#prediction-form').on('submit', function (e) {
     e.preventDefault();
@@ -45,4 +47,36 @@
     });
   });
 
+  $('#settings-form').on('submit', function (e) {
+    e.preventDefault();
+    
+    var algorithm = $('select#algorithm').val();
+    var mode = $('select#mode').val();
+    if (algorithm === '' || mode == '') {
+      $('.form-error').show();
+      
+      // $("p.error").text() = "Some error occured!";
+    } else {
+      // Everything went well...
+      $.getJSON('/_settings', { algorithm: algorithm, mode: mode }, function (data) {
+        console.log(data);
+        // var $name = $('#patient-name');
+        // var $label = $('#cancer-result');
+        // 
+        // var result = data.data.result.prediction;
+        // var name = data.data.name;
+        // $label.text(result);
+        // $name.text(name);
+        // // use appropriate class label
+        // if (result.toString().toLowerCase() === 'benign') {
+        //   $label.addClass('label-success');
+        // } else {
+        //   $label.addClass('label-danger');
+        // }
+        // 
+        // $('#myModal').modal('show');
+      });
+    }
+  });
+  
 })(jQuery);
