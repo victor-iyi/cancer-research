@@ -12,7 +12,7 @@ from models.config import Config
 
 
 class Production(Config):
-    DATABASE_URI = f'mysql://victor@localhost/{APP_NAME}'
+    DATABASE_URI = 'mysql://user@localhost/{}'.format(APP_NAME)
 
 
 class Development(Config):

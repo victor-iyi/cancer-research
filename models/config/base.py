@@ -9,8 +9,6 @@
 """
 from passlib.hash import sha256_crypt
 
-# from models import config as cfg
-
 
 class Config(object):
     DEBUG = False
@@ -19,7 +17,7 @@ class Config(object):
     # Flask Mail
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
-    MAIL_USERNAME = 'javafolabi@gmail.com'
-    MAIL_PASSWORD = 'itsprivate'
+    MAIL_USERNAME = 'example@domain.com'
+    MAIL_PASSWORD = 'password'
     MAIL_USE_TLS = False
     MAIL_USE_SSL = True

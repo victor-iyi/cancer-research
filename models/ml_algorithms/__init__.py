@@ -8,4 +8,4 @@
   Copyright © 2018. Victor. All rights reserved.
 """
 
-__all__ = ['svm', 'utils']
+__all__ = ['model', 'utils']

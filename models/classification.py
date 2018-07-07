@@ -7,22 +7,24 @@
   
   Copyright © 2018. Victor. All rights reserved.
 """
+import pickle
 
 import numpy as np
 
-from helpers.consts import BREAST_CANCER_DATASET
-from models.ml_algorithms import svm
+from helpers.consts import BREAST_CANCER_DATASET, CLASCLASSIFIER_PATH
+from models.ml_algorithms import models
 from models.ml_algorithms.utils import preprocess
 
 
-def process(data):
-    values = list(map(__return_value, data.items()))
+def process(data, type='svm'):
+    values = list(map(lambda x: int(x[1][0]), data.items()))
     values = np.array(values)
 
     x, y = preprocess(data_dir=BREAST_CANCER_DATASET)
 
-    clf = svm.SVM()
+    clf = models.SVM()
     clf.train(x, y)
+
     prediction = clf.predict(values)
     prediction = int(prediction[0])
     CLASS_NAMES = {2: 'Malignant', 4: 'Benign'}
@@ -30,9 +32,3 @@ def process(data):
     return {
         'prediction': CLASS_NAMES[prediction]
     }
-
-
-def __return_value(data):
-    # (name, value)
-    value = data[1]
-    return int(value[0])
