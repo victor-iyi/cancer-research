@@ -34,16 +34,15 @@ def contact_form():
 def classification_form():
     # store request form into a Python dictionary.
     data = dict(request.args)
-    name = data.pop('name')[0]  # remove 'name' key
+    algorithm = data.pop('algorithm')[0]  # remove 'name' key
 
     try:
         # prediction result
-        data = clf.process(data)
-        data['name'] = name
+        payload = clf.process(data=data, algorithm=algorithm)
     except Exception as e:
-        data = {"error": str(e)}
+        payload = {"error": str(e)}
 
-    return jsonify(data=data)
+    return jsonify(payload=payload)
 
 
 @app.route('/_settings')
@@ -57,9 +56,9 @@ def settings_form():
 
     try:
         # Process train/test.
-        data = clf.process(algorithm=algorithm,
-                           mode=mode)
+        payload = clf.process(algorithm=algorithm,
+                              mode=mode)
     except Exception as e:
-        data = {"error": str(e)}
+        payload = {"error": str(e)}
 
-    return jsonify(data=data)
+    return jsonify(payload=payload)

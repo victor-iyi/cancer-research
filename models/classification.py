@@ -32,7 +32,7 @@ def process(data: dict=None, **kwargs):
 
    # Path to save this classifier
     clf_path = CLASSIFIER_PATH.format(algorithm)
-    result = {}  # return value.
+    payload = {}  # return value.
 
     # For inference:
     if mode.upper() == ModeKeys.INFERENCE.upper():
@@ -43,14 +43,15 @@ def process(data: dict=None, **kwargs):
         values = np.array(list(map(lambda x: int(x[1][0]), data.items())))
 
         if not os.path.isfile(clf_path):
-            raise FileNotFoundError("You haven't trained this classifier")
+            msg = "You haven't trained {}. Go to /settings/ to train it!"
+            raise FileNotFoundError(msg.format(algorithm))
 
         with open(clf_path, 'rb') as f:
             clf = pickle.load(f)
 
         # Make predictions.
         prediction = int(clf.predict(values)[0])
-        result['prediction'] = CLASS_MAPPING[prediction]
+        payload['prediction'] = CLASS_MAPPING[prediction]
     else:
         # For Training & Testing.
 
@@ -59,7 +60,7 @@ def process(data: dict=None, **kwargs):
 
         # Split data into training & testing set.
         X_train, y_train, X_test, y_test = utils.split(x, y, test_size=0.1)
-        result["n_train"], result["n_test"] = len(y_train), len(y_test)
+        payload["n_train"], payload["n_test"] = len(y_train), len(y_test)
 
         if mode.upper() == ModeKeys.TRAIN.upper():
             # Create a new classifier.
@@ -77,14 +78,16 @@ def process(data: dict=None, **kwargs):
                 pickle.dump(clf, f)
 
         if not os.path.isfile(clf_path):
-            raise FileNotFoundError("{} hasn't been trained.".format(clf_path))
+            msg = "You haven't trained {}. Go to /settings/ to train it!"
+            raise FileNotFoundError(msg.format(algorithm))
 
         # Test model.
         with open(clf_path, 'rb') as f:
             clf = pickle.load(f)
 
-        result['score'] = '{:.02%}'.format(clf.test(X_test, y_test))
+        payload['score'] = '{:.02%}'.format(clf.test(X_test, y_test))
 
-    result['error'] = None
-    result["algorithm"] = algorithm
-    return result
+    # Update payload
+    payload['error'], payload["algorithm"] = None, algorithm
+
+    return payload

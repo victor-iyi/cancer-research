@@ -17,7 +17,7 @@
 
     $.getJSON('/_classification', {
 
-      name: $('input[name="name"]').val(),
+      algorithm: $('select#models').val(),
       clump_thickness: $('input[name="clump_thickness"]').val(),
       uniformity_of_cell_size: $('input[name="uniformity_of_cell_size"]').val(),
       uniformity_of_cell_shape: $('input[name="uniformity_of_cell_shape"]').val(),
@@ -29,15 +29,23 @@
       mitoses: $('input[name="mitoses"]').val()
 
     }, function (data) {
-      data = data.data;
-
+      payload = data.payload;
+      console.log(payload);
+      
+      // Display error.
+      if (payload.error !== null) {
+        $('.form-error').show();
+        $("p.error").text(payload.error);
+        return;
+      }
+      
       var $label = $('#cancer-result');
 
-      $label.text(data.prediction);
-      $('#patient-name').text(data.name);
+      $label.text(payload.prediction);
+      $('#algorithm').text(payload.algorithm);
 
       // use appropriate class label
-      if (data.prediction.toString().toLowerCase() === 'benign') {
+      if (payload.prediction.toString().toLowerCase() === 'benign') {
         $label.addClass('label-success');
       } else {
         $label.addClass('label-danger');
@@ -58,26 +66,30 @@
   $('#settings-form').on('submit', function (e) {
     e.preventDefault();
     
-    var algorithm = $('select#algorithm').val();
+    var algorithm = $('select#models').val();
     var mode = $('select#mode').val();
+
     if (algorithm === '' || mode == '') {
+      // Display error message.
       $('.form-error').show();
-      
       $("p.error").text("All fields are required!");
     } else {
       // Everything went well...
       $.getJSON('/_settings', { algorithm: algorithm, mode: mode }, function (data) {
-        data = data.data;
+        payload = data.payload;
 
         // Display error.
-        if (data.error !== null)
-          return $('p.error').text(data.error);
+        if (payload.error !== null) {
+          $('.form-error').show();
+          $("p.error").text(payload.error);
+          return;
+        }
         
         // Update views.
-        $('span#algorithm').text(data.algorithm)
-        $('span#accuracy').text(data.score);
-        $('span#test-samples').text(data.n_test);
-        $('span#train-samples').text(data.n_train);
+        $('span#algorithm').text(payload.algorithm)
+        $('span#accuracy').text(payload.score);
+        $('span#test-samples').text(payload.n_test);
+        $('span#train-samples').text(payload.n_train);
       
       });
     }

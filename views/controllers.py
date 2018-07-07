@@ -27,7 +27,8 @@ def about():
 @app.route('/classification/')
 @back.anchor
 def classification():
-    return render_template('classification.html')
+    return render_template('classification.html',
+                           models=list(models.MODELS.keys()))
 
 
 @app.route('/settings/')

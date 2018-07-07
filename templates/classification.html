@@ -10,11 +10,19 @@
     <!-- Prediction form -->
     <h4>Doctor's Diagnostic Report</h4>
     <form action="{{ url_for('classification_form') }}" method="get" id="prediction-form">
+      <div class="alert alert-danger form-error" role="alert">
+        <p class="error"></p>
+      </div>
       <!-- Left form elements -->
       <div class="left-agileits-w3layouts same">
         <div class="gaps">
-          <p>Patient name</p>
-          <input type="text" name="name" placeholder="" required/>
+          <p>Algorithm</p>
+          <select name="algorithm" class="form-control" id="models">
+            <option value="" hidden>Select Model</option>
+            {% for model in models -%}
+            <option value="{{ model }}">{{ model }}</option>
+            {%- endfor %}
+          </select>
         </div>
         <div class="gaps">
           <p>Clump Thickness</p>
@@ -59,6 +67,7 @@
       </div>
       
       <div class="clearfix"></div>
+    
       <input type="submit" value="Predict" id="predict"/>
 
     </form>

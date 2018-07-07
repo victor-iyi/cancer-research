@@ -17,17 +17,17 @@
         <div class="panel-heading">
           <h3 class="panel-header">Model Metrics</h3>
         </div>
-        
+
         
         <div class="panel-body">
           <!-- Settings form -->
           <div class="contact-form-aits col-md-6 settings">
             <form action="{{ url_for('settings_form') }}" method="post" id="settings-form">
               <div class="alert alert-danger form-error" role="alert">
-                <p class="error">All fields are required</p>
+                <p class="error"></p>
               </div>
               <div class="gaps">
-                <select name="algorithm" class="form-control" id="algorithm">
+                <select name="algorithm" class="form-control" id="models">
                   <option value="" hidden>Select Model</option>
                   {% for model in models -%}
                   <option value="{{ model }}">{{ model }}</option>
