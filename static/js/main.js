@@ -30,7 +30,6 @@
 
     }, function (data) {
       payload = data.payload;
-      console.log(payload);
       
       // Display error.
       if (payload.error !== null) {
@@ -40,7 +39,7 @@
       }
 
       // Clear error messages.
-      $('.form-error').show();
+      $('.form-error').hide();
       $("p.error").text('');
 
       var $label = $('#cancer-result');
@@ -90,7 +89,7 @@
         }
         
         // Clear error messages.
-        $('.form-error').show();
+        $('.form-error').hide();
         $("p.error").text('');
         
         // Update views.
