@@ -9,44 +9,75 @@
 """
 import models.ml_algorithms.base as base
 
-from sklearn.svm import SVC
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.naive_bayes import GaussianNB
+import sklearn.svm as svm
+import sklearn.tree as tree
+import sklearn.ensemble as ensemble
+import sklearn.naive_bayes as naive_bayes
 
 
-class SVM(base.Model):
+class SupportVectorMachine(base.Model):
     def __init__(self, **kwargs):
-        super(SVM, self).__init__()
+        super(SupportVectorMachine, self).__init__()
 
-        self.model = SVC(**kwargs)
-
-
-class NaiveBayes(base.Model):
-    def __init__(self, **kwargs):
-        super(NaiveBayes, self).__init__()
-
-        self.model = GaussianNB(**kwargs)
+        self.model = svm.SVC(**kwargs)
 
 
 class DecisionTree(base.Model):
     def __init__(self, **kwargs):
         super(DecisionTree, self).__init__()
 
-        self.model = DecisionTreeClassifier(**kwargs)
+        self.model = tree.DecisionTreeClassifier(**kwargs)
+
+
+class GaussianNB(base.Model):
+    def __init__(self, **kwargs):
+        super(GaussianNB, self).__init__()
+
+        self.model = naive_bayes.GaussianNB(**kwargs)
+
+
+class BernoulliNB(base.Model):
+    def __init__(self, **kwargs):
+        super(BernoulliNB, self).__init__()
+
+        self.model = naive_bayes.BernoulliNB(**kwargs)
 
 
 class RandomForest(base.Model):
     def __init__(self, **kwargs):
         super(RandomForest, self).__init__()
 
-        self.model = RandomForestClassifier(**kwargs)
+        self.model = ensemble.RandomForestClassifier(**kwargs)
+
+
+class AdaBoost(base.Model):
+    def __init__(self, **kwargs):
+        super(AdaBoost, self).__init__()
+
+        self.model = ensemble.AdaBoostClassifier(**kwargs)
+
+
+class Bagging(base.Model):
+    def __init__(self, **kwargs):
+        super(Bagging, self).__init__()
+
+        self.model = ensemble.BaggingClassifier(**kwargs)
+
+
+class GradientBoosting(base.Model):
+    def __init__(self, **kwargs):
+        super(GradientBoosting, self).__init__()
+
+        self.model = ensemble.GradientBoostingClassifier(**kwargs)
 
 
 MODELS = {
-    'Support Vector Machine': SVM,
-    'Naïve Bayes': NaiveBayes,
-    'Random Forest': RandomForest,
     'Decision Tree': DecisionTree,
-    'Random Foreset': RandomForest,
+    'Support Vector Machine': SupportVectorMachine,
+    'Gaussian (Naïve Bayes)': GaussianNB,
+    'Bernoulli (Naïve Bayes)': BernoulliNB,
+    'Bagging (Ensemble)': Bagging,
+    'AdaBoost (Ensemble)': AdaBoost,
+    'Random Forest (Ensemble)': RandomForest,
+    'Gradient Boosting (Ensemble)': GradientBoosting,
 }

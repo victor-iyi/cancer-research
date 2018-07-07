@@ -25,10 +25,9 @@ def process(data: dict=None, **kwargs):
 
     # Train, test or inference mode?
     mode = kwargs.get('mode') or ModeKeys.INFERENCE
-
     # `algorithm` must be valid.
     if algorithm not in Models.keys():
-        raise KeyError("Got '{}'. Expected one of '{}'".format(
+        raise KeyError("Got '{}'. Expected one of \"{}\"".format(
             algorithm, '", '.join(Models.keys())))
 
    # Path to save this classifier
@@ -87,4 +86,5 @@ def process(data: dict=None, **kwargs):
         result['score'] = '{:.02%}'.format(clf.test(X_test, y_test))
 
     result['error'] = None
+    result["algorithm"] = algorithm
     return result

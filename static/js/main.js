@@ -29,15 +29,15 @@
       mitoses: $('input[name="mitoses"]').val()
 
     }, function (data) {
-      var $label = $('#cancer-result');
-      var $name = $('#patient-name');
+      data = data.data;
 
-      var result = data.data.result.prediction;
-      var name = data.data.name;
-      $label.text(result);
-      $name.text(name);
+      var $label = $('#cancer-result');
+
+      $label.text(data.prediction);
+      $('#patient-name').text(data.name);
+
       // use appropriate class label
-      if (result.toString().toLowerCase() === 'benign') {
+      if (data.prediction.toString().toLowerCase() === 'benign') {
         $label.addClass('label-success');
       } else {
         $label.addClass('label-danger');
@@ -74,6 +74,7 @@
           return $('p.error').text(data.error);
         
         // Update views.
+        $('span#algorithm').text(data.algorithm)
         $('span#accuracy').text(data.score);
         $('span#test-samples').text(data.n_test);
         $('span#train-samples').text(data.n_train);

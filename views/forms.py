@@ -38,8 +38,8 @@ def classification_form():
 
     try:
         # prediction result
-        result = clf.process(data)
-        data = {'name': name, 'result': result}
+        data = clf.process(data)
+        data['name'] = name
     except Exception as e:
         data = {"error": str(e)}
 
