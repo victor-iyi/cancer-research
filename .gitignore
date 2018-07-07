@@ -44,4 +44,4 @@ instance/
 
 ### Project files
 !datasets
-!models
+models
