@@ -38,19 +38,23 @@
         $("p.error").text(payload.error);
         return;
       }
-      
+
+      // Clear error messages.
+      $('.form-error').show();
+      $("p.error").text('');
+
       var $label = $('#cancer-result');
 
+      // Display payload to the screen.
       $label.text(payload.prediction);
       $('#algorithm').text(payload.algorithm);
 
       // use appropriate class label
-      if (payload.prediction.toString().toLowerCase() === 'benign') {
+      if (payload.prediction.toString().toLowerCase() === 'benign')
         $label.addClass('label-success');
-      } else {
-        $label.addClass('label-danger');
-      }
+      else $label.addClass('label-danger');
 
+      // Open prediction modal.
       $('#myModal').modal('show');
     });
   });
@@ -84,6 +88,10 @@
           $("p.error").text(payload.error);
           return;
         }
+        
+        // Clear error messages.
+        $('.form-error').show();
+        $("p.error").text('');
         
         // Update views.
         $('span#algorithm').text(payload.algorithm)
