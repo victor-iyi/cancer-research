@@ -26,4 +26,16 @@ DATASET_DIR = os.path.join(STATIC_DIR, 'datasets')
 BREAST_CANCER_DATASET = os.path.join(DATASET_DIR, 'breast-cancer-wisconsin')
 
 # Path to trained classifier.
-CLASSIFIER_PATH = os.path.join(STATIC, 'saved/{}.pkl')
+CLASSIFIER_PATH = os.path.join(STATIC_DIR, 'saved/{}.pkl')
+
+# Class mapping.
+CLASS_MAPPING = {2: 'Malignant', 4: 'Benign'}
+
+
+class ModeKeys:
+    """Predict configurations."""
+
+    TRAIN = 'TRAIN'
+    TEST = 'TEST'
+    INFERENCE = 'INFERENCE'
+    PREDICT = INFERENCE

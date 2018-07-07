@@ -44,9 +44,9 @@ class RandomForest(base.Model):
 
 
 MODELS = {
-    'svm': SVM,
-    'NaiveBayes': NaiveBayes,
-    'RandomForest': RandomForest,
-    'DecisionTree': DecisionTree,
-    'RandomForest': RandomForest,
+    'Support Vector Machine': SVM,
+    'Naïve Bayes': NaiveBayes,
+    'Random Forest': RandomForest,
+    'Decision Tree': DecisionTree,
+    'Random Foreset': RandomForest,
 }

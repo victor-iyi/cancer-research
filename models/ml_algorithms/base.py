@@ -26,17 +26,17 @@ class Model:
         return self.predict(X)
 
     def predict(self, X):
-        assert self.model is not None, 'Create a model in sub constructor'
+        assert self.model is not None, '`self.model` can\'t be `None`.'
 
         return self.model.predict([X])
 
     def train(self, X, y):
-        assert self.model is not None, 'Create a model in sub constructor'
+        assert self.model is not None, '`self.model` can\'t be `None`.'
 
         self.model.fit(X, y)
 
     def test(self, X, y):
-        assert self.model is not None, 'Create a model in sub constructor'
+        assert self.model is not None, '`self.model` can\'t be `None`.'
 
         return self.model.score(X, y)
 
