@@ -61,5 +61,5 @@ def settings_form():
                            mode=mode)
     except Exception as e:
         data = {"error": str(e)}
-    print(f"Data = {data}")
+
     return jsonify(data=data)

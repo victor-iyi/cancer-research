@@ -11,7 +11,7 @@ import os
 
 
 # Application name.
-APP_NAME = 'breast_cancer'
+APP_NAME = 'Cancer-Research'
 
 # Project base directory.
 PROJECT_DIR = os.getcwd()

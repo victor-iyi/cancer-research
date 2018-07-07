@@ -13,7 +13,7 @@ from passlib.hash import sha256_crypt
 class Config(object):
     DEBUG = False
     TESTING = False
-    SECRET_KEY = sha256_crypt.encrypt('Imaginary A.I.')
+    SECRET_KEY = sha256_crypt.encrypt('Cancer Research')
     # Flask Mail
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465

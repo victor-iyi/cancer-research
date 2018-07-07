@@ -42,7 +42,6 @@ def preprocess(data_dir):
         return features, labels
 
     except Exception as e:
-        print('ERROR: {}'.format(e))
         return False
 
 
