@@ -1,0 +1,50 @@
+{%- extends 'layouts/generic.html' %}
+
+{% block title -%}Settings{%- endblock %}
+
+{% block description -%}Update, Train &amp; Test models?{%- endblock %}
+
+{% block content -%}
+<!-- settings -->
+<div class="about" id="about">
+  <div class="container">
+    <h2 class="w3_heade_tittle_agile">Machine learning Model Settings</h2>
+    <p class="sub_t_agileits">Best in service</p>
+
+    <div class="about-w3lsrow">
+
+      <div class="col-md-6 col-sm-7 w3about-img">
+        <div class="contact-form-aits">
+          <!-- Settings form -->
+          <form action="{{ url_for('settings_form') }}" method="post">
+            <select class="">
+              <option hidden>Select Model to Train</option>
+              {% for model in models -%}
+                <option value="{{ model }}">{{ model }}</option>
+              {%- endfor %}
+            </select>
+            <!-- Submit buttons. -->
+            <div class="send-button agileits w3layouts" style="margin-top: 1em;">
+              <button type="submit" class="btn btn-primary" style="margin-right: 3rem;">
+                Train Model
+              </button>
+              <button type="submit" class="btn btn-primary" style="margin-left: 3rem;">
+                Test Model
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Right pane. -->
+      <div class="col-md-6">
+        <h3>Model Metrics</h3>
+        <span id="accuracy-text">Accuracy:</span> <span id="accuracy">50%</span>
+      </div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!-- /settings-bottom -->
+{%- endblock %}

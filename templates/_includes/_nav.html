@@ -33,6 +33,10 @@
             id="moble_nav_item_3">
           <a href="{{ url_for('classification') }}" class="menu__link"> Classification </a>
         </li>
+        <li class="m_nav_item menu__item{{ '--current' if title|lower == 'settings' else '' }}"
+            id="moble_nav_item_3">
+          <a href="{{ url_for('settings') }}" class="menu__link"> Settings </a>
+        </li>
         <li class="m_nav_item menu__item{{ '--current' if title|lower == 'contact' else '' }}" id="moble_nav_item_5">
           <a href="{{ url_for('contact') }}" class="menu__link"> Contact </a>
         </li>

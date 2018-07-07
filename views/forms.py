@@ -35,7 +35,28 @@ def classification_form():
     # store request form into a Python dictionary.
     data = dict(request.args)
     name = data.pop('name')[0]  # remove 'name' key
-    # prediction result
-    result = clf.process(data)
-    data = {'name': name, 'result': result}
+
+    try:
+        # prediction result
+        result = clf.process(data)
+        data = {'name': name, 'result': result}
+    except Exception as e:
+        data = {"error": e}
+
+    return jsonify(data=data)
+
+
+@app.route('/_settings')
+def settings_form():
+    # store request form into a Python dictionary.
+    data = dict(request.args)
+    name = data.pop('name')[0]  # remove 'name' key
+
+    try:
+        # prediction result
+        result = clf.process(data)
+        data = {'name': name, 'result': result}
+    except Exception as e:
+        data = {"error": e}
+
     return jsonify(data=data)

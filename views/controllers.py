@@ -8,7 +8,7 @@
   Copyright © 2018. Victor. All rights reserved.
 """
 from flask import render_template
-
+from models.ml_algorithms import models
 from views import app, back
 
 
@@ -28,6 +28,13 @@ def about():
 @back.anchor
 def classification():
     return render_template('classification.html')
+
+
+@app.route('/settings/')
+@back.anchor
+def settings():
+    return render_template('settings.html',
+                           models=list(models.MODELS.keys()))
 
 
 @app.route('/contact/')

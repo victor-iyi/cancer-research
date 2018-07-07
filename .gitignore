@@ -43,5 +43,5 @@ instance/
 
 
 ### Project files
-saved/
-datasets
+!datasets
+!models
