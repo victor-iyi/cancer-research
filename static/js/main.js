@@ -47,6 +47,14 @@
     });
   });
 
+
+/*
+ * +————————————————————————————————————————————————————————————————————————————————+
+ * | +————————————————————————————————————————————————————————————————————————————+ |
+ * | | Settings form.
+ * | +————————————————————————————————————————————————————————————————————————————+ |
+ * +————————————————————————————————————————————————————————————————————————————————+
+ */
   $('#settings-form').on('submit', function (e) {
     e.preventDefault();
     
@@ -55,26 +63,21 @@
     if (algorithm === '' || mode == '') {
       $('.form-error').show();
       
-      // $("p.error").text() = "Some error occured!";
+      $("p.error").text("All fields are required!");
     } else {
       // Everything went well...
       $.getJSON('/_settings', { algorithm: algorithm, mode: mode }, function (data) {
-        console.log(data);
-        // var $name = $('#patient-name');
-        // var $label = $('#cancer-result');
-        // 
-        // var result = data.data.result.prediction;
-        // var name = data.data.name;
-        // $label.text(result);
-        // $name.text(name);
-        // // use appropriate class label
-        // if (result.toString().toLowerCase() === 'benign') {
-        //   $label.addClass('label-success');
-        // } else {
-        //   $label.addClass('label-danger');
-        // }
-        // 
-        // $('#myModal').modal('show');
+        data = data.data;
+
+        // Display error.
+        if (data.error !== null)
+          return $('p.error').text(data.error);
+        
+        // Update views.
+        $('span#accuracy').text(data.score);
+        $('span#test-samples').text(data.n_test);
+        $('span#train-samples').text(data.n_train);
+      
       });
     }
   });

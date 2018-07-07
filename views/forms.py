@@ -41,7 +41,7 @@ def classification_form():
         result = clf.process(data)
         data = {'name': name, 'result': result}
     except Exception as e:
-        data = {"error": e}
+        data = {"error": str(e)}
 
     return jsonify(data=data)
 
@@ -57,10 +57,9 @@ def settings_form():
 
     try:
         # Process train/test.
-        result = clf.process(algorithm=algorithm,
-                             mode=mode)
-        data = {'result': result}
+        data = clf.process(algorithm=algorithm,
+                           mode=mode)
     except Exception as e:
         data = {"error": str(e)}
-
+    print(f"Data = {data}")
     return jsonify(data=data)

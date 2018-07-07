@@ -11,47 +11,75 @@
     <h2 class="w3_heade_tittle_agile">Machine learning Model Settings</h2>
     <p class="sub_t_agileits">Best in service</p>
 
-    <div class="about-w3lsrow">
-
-      <div class="col-md-6 col-sm-7 w3about-img">
-        <div class="contact-form-aits settings">
+    <div class="about-w3lsrow">      
+      <!-- Right pane. -->
+      <div class="panel panel-default metrics">
+        <div class="panel-heading">
+          <h3 class="panel-header">Model Metrics</h3>
+        </div>
+        
+        
+        <div class="panel-body">
           <!-- Settings form -->
-          <form action="{{ url_for('settings_form') }}" method="post" id="settings-form">
-            <div class="alert alert-danger form-error" role="alert">
-              <p class="error">All fields are required</p>
-            </div>
-            <div class="gaps">
-              <p>Model</p>
-              <select name="algorithm" id="algorithm">
-                <option value="" hidden>Select Model</option>
-                {% for model in models -%}
+          <div class="contact-form-aits col-md-6 settings">
+            <form action="{{ url_for('settings_form') }}" method="post" id="settings-form">
+              <div class="alert alert-danger form-error" role="alert">
+                <p class="error">All fields are required</p>
+              </div>
+              <div class="gaps">
+                <select name="algorithm" class="form-control" id="algorithm">
+                  <option value="" hidden>Select Model</option>
+                  {% for model in models -%}
                   <option value="{{ model }}">{{ model }}</option>
-                {%- endfor %}
-              </select>
-            </div>
-            <div class="gaps">
-              <p>Mode</p>
-              <select name="mode" id="mode">
-                <option value="" hidden>Select Mode</option>
-                <option value="train">Train</option>
-                <option value="test">Test</option>
-              </select>
-            </div>
-            <!-- Submit buttons. -->
-            <div class="send-button agileits w3layouts" style="margin-top: 1em;">
-              <button type="submit" class="btn btn-primary">Test Model</button>
-            </div>
-          </form>
+                  {%- endfor %}
+                </select>
+              </div>
+              <div class="gaps">
+                <select name="mode" class="form-control" id="mode">
+                  <option value="" hidden>Select Mode</option>
+                  <option value="train">Train</option>
+                  <option value="test">Test</option>
+                </select>
+              </div>
+              <!-- Submit buttons. -->
+              <div class="agileits w3layouts" style="margin: 2em;">
+                <button type="submit" class="btn btn-default btn-md">Train/Test Model</button>
+              </div>
+            </form>
+          </div> 
+          <!-- End Settings form -->
+          <div class="col-md-6">  
+            <!-- Metrics -->
+            <ul class="list-group">
+              <li class="list-group-item">
+                <h4 class="card-title">
+                  Accuracy is: 
+                  <span class="label label-default" id="accuracy"></span>
+                </h4>
+              </li>
+              <li class="list-group-item">
+                <h5 class="text-muted">
+                  No. of test set: 
+                  <span class="label label-default" id="test-samples"></span>
+                </h5>
+              </li>
+              <li class="list-group-item">
+                <h5 class="text-muted">
+                  No. of train set: 
+                  <span class="label label-default" id="train-samples"></span>
+                </h5>
+              </li>
+            </ul>
+            <!-- End metrics -->
+            <!-- <a href="{{ url_for('classification') }}" class="btn btn-default btn-md">
+              Make predictions
+            </a> -->
+          </div>
         </div>
       </div>
-      
-      <!-- Right pane. -->
-      <div class="col-md-6">
-        <h3>Model Metrics</h3>
-        <span id="accuracy-text">Accuracy:</span> <span id="accuracy">50%</span>
-      </div>
-      
+    
       <div class="clearfix"></div>
+
     </div>
   </div>
 </div>

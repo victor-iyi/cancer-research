@@ -2511,16 +2511,16 @@ h2.typoh2 {
   background: rgb(62, 61, 61);
 }
 
-select option {
+/* select option {
   background: rgb(62, 61, 61);
-}
+} */
 
 .classification textarea {
   resize: none;
   height: 45px;
 }
 
-.settings select.option {
+/* .settings select.option {
   width: 100%;
   color: #fff;
   outline: none;
@@ -2531,7 +2531,7 @@ select option {
   margin: .3em 0em 1em;
   background: rgb(200, 200, 200);
   border-radius: 0px !important;
-}
+} */
 
 .classification input[type=submit] {
   display: block;

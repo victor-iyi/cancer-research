@@ -86,4 +86,5 @@ def process(data: dict=None, **kwargs):
 
         result['score'] = '{:.02%}'.format(clf.test(X_test, y_test))
 
+    result['error'] = None
     return result
