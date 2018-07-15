@@ -15,7 +15,7 @@ from models import classification as clf
 @app.route('/_newsletter', methods=['POST'])
 def newsletter_form():
     email = request.form['email']
-    flash(f'Email: {email}')
+    flash('Email: {}'.format(email))
     return back.redirect()
 
 
@@ -26,7 +26,7 @@ def contact_form():
     number = request.form['number']
     subject = request.form['subject']
     message = request.form['message']
-    flash(f'{name}, {email}, {number}, {subject}, {message}')
+    # flash(f'{name}, {email}, {number}, {subject}, {message}')
     return redirect(url_for('contact'))
 
 

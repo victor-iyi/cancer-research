@@ -17,14 +17,14 @@ A breast cancer research project
 
 ## Setup
 
-```
+```sh
 $ pip install --upgrade pip
 ```
 
 Then you probably want to work from your local PC:
 
 Start by cloning the project from github:
-```
+```sh
 $ cd ~/Documents/
 $ git clone https://github.com/victor-iyiola/cancer-research.git
 $ cd cancer-research
@@ -35,18 +35,18 @@ or:
 You can download the `.zip` project files [here](https://github.com/victor-iyiola/cancer-research) and extract the 
 project files.
 
-```
+```sh
 $ cd <your_download_dir>
 $ cd cancer-research
 ```
 
 Then install these requirements:
-```
+```sh
 $ pip install --upgrade -r requirements.txt
 ```
      
 Finally, start the project:
-```
+```sh
 $ python __init__.py
 ```
 
