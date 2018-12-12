@@ -33,11 +33,11 @@
 # ```
 #
 
-jinja2==2.10
-werkzeug==0.14.1
-flask==0.12.2
-numpy==1.14.0
-scipy==1.0.0
+jinja2>=2.10
+werkzeug>=0.14.1
+flask>=0.12.2
+numpy>=1.14.0
+scipy>=1.0.0
 pandas==0.22.0
 scikit-learn==0.19.1
 passlib==1.7.1
